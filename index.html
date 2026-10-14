@@ -3,234 +3,251 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#28130f">
-<meta name="description" content="Explore Chocotia's celebration cakes, chocolates and thoughtful gifting collection.">
-<title>Chocotia | Cakes & Gifting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocotia | Sweetness in Every Moment</title>
+<meta name="theme-color" content="#180b0b">
 <style>
-:root{
-  --dark:#24120f;--brown:#48251d;--gold:#e9c17b;
-  --pink:#ed6e9b;--cream:#fff8f1;--ink:#39251f;
-}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:75px}
-body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}
-a{color:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-button{font:inherit}
-header{
-  position:sticky;top:0;z-index:20;display:flex;align-items:center;
-  justify-content:space-between;gap:12px;padding:15px 5%;
-  background:#fffaf5f5;backdrop-filter:blur(12px);
-  border-bottom:1px solid #e9d8c8
-}
-.logo{font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#6c3427}
-.logo span{color:#bd8a43}
-nav{display:flex;gap:15px;align-items:center}
-nav a{text-decoration:none;font-size:12px;font-weight:bold}
-nav a:hover{color:#c05b80}
-.intro{
-  min-height:440px;display:grid;place-items:center;text-align:center;
-  padding:55px 6%;color:#fff4df;overflow:hidden;position:relative;
-  background:
-    radial-gradient(ellipse at 50% 110%,#93542c77,transparent 48%),
-    radial-gradient(circle at 20% 25%,#d4a35d25 0 2px,transparent 4px),
-    radial-gradient(circle at 80% 35%,#e7c57c33 0 2px,transparent 5px),
-    linear-gradient(135deg,#160b09,#45241a 55%,#21100d);
-}
-.intro:before,.intro:after{
-  content:"";position:absolute;width:230px;height:230px;border:1px solid #d7ad6540;
-  border-radius:50%;animation:orbit 18s linear infinite;pointer-events:none
-}
-.intro:after{width:310px;height:310px;animation-direction:reverse}
-@keyframes orbit{to{transform:rotate(360deg)}}
-.intro-inner{position:relative;z-index:1;max-width:650px}
-.eyebrow{color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase}
-.intro h1{font:clamp(45px,10vw,82px)/.98 Georgia,serif;margin:22px 0;letter-spacing:-2px}
-.intro h1 span{color:var(--gold);font-style:italic}
-.intro p{max-width:450px;margin:0 auto;color:#f1ddc8;line-height:1.8;font-size:14px}
-.gold-btn,.pink-btn{
-  display:inline-flex;justify-content:center;align-items:center;gap:8px;
-  padding:14px 22px;border-radius:30px;text-decoration:none;font-size:13px;
-  font-weight:bold;transition:transform .25s,box-shadow .25s
-}
-.gold-btn{margin-top:25px;background:linear-gradient(120deg,#f5dda3,#c7974c);color:#29140e}
-.pink-btn{background:#e64f87;color:white;margin-top:12px}
-.gold-btn:hover,.pink-btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px #0002}
-.hero-image{
-  width:min(100%,430px);height:220px;object-fit:cover;display:block;
-  margin:35px auto 0;border:1px solid #e8c98788;border-radius:18px;
-  box-shadow:0 22px 60px #0008;animation:rise 1s ease both
-}
-@keyframes rise{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
-section{padding:52px 5%}
-.heading{text-align:center;margin:0 auto 27px;max-width:560px}
-.kicker{color:#bb7b3e;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:bold}
-.heading h2{font:clamp(28px,6vw,42px)/1.15 Georgia,serif;margin:12px 0}
-.heading p{color:#826d62;font-size:14px;line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
-.card{
-  background:white;border-radius:18px;overflow:hidden;
-  border:1px solid #f0e3d8;box-shadow:0 8px 25px #4321140b;
-  transition:transform .25s,box-shadow .25s
-}
-.card:hover{transform:translateY(-5px);box-shadow:0 16px 32px #43211418}
-.card img{display:block;width:100%;height:145px;object-fit:cover;background:#f4e3dc}
-.card-content{padding:13px}
-.card h3{font: bold 17px Georgia,serif;margin:0 0 8px}
-.card p{font-size:12px;color:#816c62;line-height:1.6;margin:0}
-.card a{display:inline-block;margin-top:12px;text-decoration:none;color:#b45c69;font-size:12px;font-weight:bold}
-.gift-section{background:linear-gradient(145deg,#fff0f5,#f9eddf 55%,#f0e8ff)}
-.gift-section .card{background:#fffdfb}
-.contact{
-  text-align:center;background:linear-gradient(135deg,#2b1712,#4c281c);
-  color:#fff5e8;border-radius:25px;padding:32px 20px
-}
-.contact h2{font:clamp(28px,6vw,40px) Georgia,serif}
-.contact p{font-size:14px;line-height:1.8;color:#eedbca}
-footer{padding:30px 5%;text-align:center;background:#1d100d;color:#f6e7d5;font-size:12px;line-height:1.8}
-footer p{color:#c9b2a3}
-.whatsapp{
-  position:fixed;z-index:30;right:15px;bottom:15px;
-  background:#188653;color:white;text-decoration:none;border-radius:30px;
-  padding:14px 17px;font-weight:bold;font-size:12px;box-shadow:0 5px 20px #0003
-}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@media(min-width:700px){
-  .intro{min-height:590px;padding:75px 8%}
-  .hero-image{height:300px}
-  section{padding:70px 8%}
-  .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
-  .card img{height:220px}
-  .card-content{padding:17px}
-}
-@media(max-width:390px){
-  header{padding:13px 4%;gap:7px}
-  .logo{font-size:20px}
-  nav{gap:9px}
-  nav a{font-size:11px}
-  .intro{min-height:410px;padding:45px 5%}
-  .hero-image{height:190px}
-  .card img{height:120px}
-  .card h3{font-size:15px}
-  .whatsapp{right:10px;bottom:10px;padding:12px 14px}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
-}
+body{margin:0;background:#180b0b;color:#fff5e8;font-family:Arial,sans-serif}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 6%;border-bottom:1px solid #ffffff18}
+.logo{font-size:25px;font-weight:900;letter-spacing:2px;color:#f4c77b}
+nav a{color:#fff;text-decoration:none;font-size:13px}
+.hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:35px 6%;gap:20px;background:radial-gradient(ellipse at 70% 45%,#66301d 0%,#321615 35%,#180b0b 75%)}
+.eyebrow{color:#e9bc78;letter-spacing:4px;font-size:11px;text-transform:uppercase}
+h1{font-family:Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:1.03;margin:18px 0}
+h1 em{color:#edbd78;font-weight:400}
+.desc{color:#e4cfc1;line-height:1.8;max-width:440px;font-size:15px}
+.btn{border:0;background:#edbd78;color:#32140f;padding:15px 24px;border-radius:30px;font-weight:bold;cursor:pointer;margin:10px 8px 0 0}
+.btn.alt{background:transparent;border:1px solid #edbd78;color:#ffe1ae}
+.scene-wrap{position:relative;min-width:0}
+#scene{width:100%;height:430px;display:block;touch-action:pan-y;cursor:grab}
+.hint{text-align:center;color:#d4b9a3;font-size:11px;letter-spacing:1px}
+.section{padding:65px 6%;text-align:center}
+.section h2{font:40px Georgia,serif;margin:10px}
+.section p{color:#cdb5a5;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;text-align:left}
+.card{border:1px solid #ffffff17;background:#281311;border-radius:18px;overflow:hidden}
+.card .pic{height:150px;display:grid;place-items:center;font-size:65px;background:linear-gradient(140deg,#51251c,#281311)}
+.card h3{font:23px Georgia,serif;margin:18px 18px 8px}
+.card p{margin:0 18px 20px;font-size:13px}
+footer{text-align:center;padding:28px;color:#bda79a;border-top:1px solid #ffffff17;font-size:12px}
+@media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:45px;gap:0}.hero-copy{text-align:center}.desc{margin:0 auto}.scene-wrap{grid-row:1}#scene{height:320px}h1{font-size:49px}.cards{grid-template-columns:1fr 1fr}.section h2{font-size:34px}}
+@media(max-width:390px){.cards{grid-template-columns:1fr}#scene{height:290px}}
 </style>
 </head>
 <body>
-
-<header>
-  <a class="logo" href="#home" style="text-decoration:none">Chocotia<span> ♥</span></a>
-  <nav aria-label="Main navigation">
-    <a href="#cakes">Cakes</a>
-    <a href="#gifts">Gifting</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+<nav>
+  <div class="logo">CHOCO<span style="color:white">TIA.</span></div>
+  <a href="#collection">OUR COLLECTION ↗</a>
+</nav>
 
 <main>
-  <section class="intro" id="home">
-    <div class="intro-inner">
-      <div class="eyebrow">Artisan Cakes • Chocolates • Gifting</div>
-      <h1>A World of<br><span>Sweet Wonders</span></h1>
-      <p>Made for your celebrations. Beautiful cakes, indulgent chocolate treats and thoughtful gifts for moments worth remembering.</p>
-      <a class="gold-btn" href="#cakes">Explore the Collection ↓</a>
-      <img class="hero-image" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" alt="Decorated celebration cake" fetchpriority="high">
-    </div>
-  </section>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Handcrafted with love</div>
+    <h1>A little box<br>of <em>happiness.</em></h1>
+    <p class="desc">Beautiful cakes, thoughtful chocolate gifts and sweet surprises made to turn your special moments into unforgettable memories.</p>
+    <button class="btn" id="openBtn">OPEN YOUR GIFT ✨</button>
+    <button class="btn alt" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">EXPLORE SWEETS</button>
+  </div>
+  <div class="scene-wrap">
+    <canvas id="scene" aria-label="Interactive 3D chocolate gift box and cake"></canvas>
+    <div class="hint">✦ DRAG TO ROTATE · TAP OPEN YOUR GIFT ✦</div>
+  </div>
+</section>
 
-  <section id="cakes">
-    <div class="heading reveal">
-      <div class="kicker">A little extra magic</div>
-      <h2>Cakes for Every Celebration 🎂</h2>
-      <p>From playful birthday themes to elegant wedding creations, discover inspiration for your next celebration.</p>
-    </div>
-    <div class="grid">
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=650&q=80" alt="Birthday cake">
-        <div class="card-content"><h3>Birthday Cakes</h3><p>Colourful designs for unforgettable birthdays.</p><a href="#contact">Ask about a cake →</a></div>
-      </article>
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=650&q=80" alt="Decorated theme cake">
-        <div class="card-content"><h3>Theme Cakes</h3><p>Bring a favourite idea to life.</p><a href="#contact">Ask about a cake →</a></div>
-      </article>
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=650&q=80" alt="Elegant celebration cake">
-        <div class="card-content"><h3>Wedding Cakes</h3><p>Elegant inspiration for your special day.</p><a href="#contact">Ask about a cake →</a></div>
-      </article>
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=650&q=80" alt="Custom cake and desserts">
-        <div class="card-content"><h3>Custom Cakes</h3><p>Share your vision for a personal creation.</p><a href="#contact">Ask about a cake →</a></div>
-      </article>
-    </div>
-  </section>
-
-  <section class="gift-section" id="gifts">
-    <div class="heading reveal">
-      <div class="kicker">Wrapped with love</div>
-      <h2>Gifting, Made Special 🎁</h2>
-      <p>Explore gifting inspiration for festivals, loved ones and thoughtful business gestures.</p>
-    </div>
-    <div class="grid">
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=650&q=80" alt="Wrapped gift box">
-        <div class="card-content"><h3>Gift Hampers</h3><p>Thoughtful treats, beautifully presented.</p><a href="#contact">Enquire →</a></div>
-      </article>
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=650&q=80" alt="Chocolate treats">
-        <div class="card-content"><h3>Chocolate Gifts</h3><p>A delicious way to share a little joy.</p><a href="#contact">Enquire →</a></div>
-      </article>
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=650&q=80" alt="Decorative gift packaging">
-        <div class="card-content"><h3>Festive Gifts</h3><p>Celebrate special occasions with care.</p><a href="#contact">Enquire →</a></div>
-      </article>
-      <article class="card reveal">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=650&q=80" alt="Gift box with ribbon">
-        <div class="card-content"><h3>Corporate Gifts</h3><p>Considered gifting for teams and clients.</p><a href="#contact">Enquire →</a></div>
-      </article>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="contact reveal">
-      <div class="eyebrow">Make their moment sweeter</div>
-      <h2>Let's Create Something Special</h2>
-      <p>Have a cake theme or gifting idea in mind?<br>Start an enquiry to discuss your requirements.</p>
-      <a class="gold-btn" href="https://wa.me/?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20enquire%20about%20cakes%20and%20gifting." target="_blank" rel="noopener">Enquire on WhatsApp ↗</a>
-    </div>
-  </section>
+<section class="section" id="collection">
+  <div class="eyebrow">Made for your moments</div>
+  <h2>Sweeten Every Celebration</h2>
+  <p>A little something special for every occasion.</p>
+  <div class="cards">
+    <article class="card"><div class="pic">🎂</div><h3>Celebration Cakes</h3><p>Colourful cakes for birthdays and happy occasions.</p></article>
+    <article class="card"><div class="pic">🍫</div><h3>Chocolate Gifts</h3><p>Sweet surprises for the people you love.</p></article>
+    <article class="card"><div class="pic">🎁</div><h3>Gift Hampers</h3><p>Thoughtfully styled gifts for special moments.</p></article>
+  </div>
+</section>
 </main>
+<footer>CHOCO TIA · A SWEET LITTLE CONCEPT WEBSITE</footer>
 
-<footer>
-  <div class="logo" style="color:#f1d49a">Chocotia ♥</div>
-  <p>Cakes, chocolates & thoughtful gifting.</p>
-  <small>Independent concept demo · Not the official Chocotia website</small>
-</footer>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
-<a class="whatsapp" href="https://wa.me/?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener" aria-label="Open WhatsApp enquiry">WhatsApp ↗</a>
+const canvas = document.querySelector('#scene');
+const scene = new THREE.Scene();
+scene.background = null;
 
-<script>
-(function(){
-  const items=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){
-    items.forEach(el=>el.classList.add('visible'));
-    return;
-  }
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:0.12});
-  items.forEach(el=>observer.observe(el));
-})();
+const camera = new THREE.PerspectiveCamera(36,1,0.1,100);
+camera.position.set(0,2.6,8.5);
+camera.lookAt(0,1,0);
+
+const renderer = new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.5));
+renderer.shadowMap.enabled=true;
+renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure=1.35;
+
+scene.add(new THREE.HemisphereLight(0xffe4cc,0x35130f,2.2));
+const keyLight=new THREE.DirectionalLight(0xffd39a,3.5);
+keyLight.position.set(4,7,5);
+keyLight.castShadow=true;
+scene.add(keyLight);
+const pinkLight=new THREE.PointLight(0xff4585,35,10);
+pinkLight.position.set(-3,2,2);
+scene.add(pinkLight);
+const goldLight=new THREE.PointLight(0xffb34a,30,10);
+goldLight.position.set(3,4,-2);
+scene.add(goldLight);
+
+const mat=(color,metalness=0,roughness=0.35)=>new THREE.MeshStandardMaterial({color,metalness,roughness});
+const chocolate=mat('#542319',0.2,0.25);
+const darkChocolate=mat('#2b100d',0.1,0.22);
+const gold=mat('#f6bd59',0.75,0.22);
+const pink=mat('#ed6b9b',0.1,0.25);
+const cream=mat('#fff0d4',0,0.4);
+const box=new THREE.Group();
+scene.add(box);
+
+function cube(parent,w,h,d,material,x,y,z){
+ const mesh=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);
+ mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;
+ parent.add(mesh);return mesh;
+}
+
+// 3D gift box base
+cube(box,2.5,1.35,1.9,chocolate,0,0.78,0);
+cube(box,2.53,0.08,1.93,gold,0,1.47,0);
+
+// Satin ribbon wrapping around the box
+cube(box,0.25,1.37,1.94,gold,0,0.78,0);
+cube(box,2.52,1.37,0.23,gold,0,0.78,0);
+
+// Hinged lid: this pivot rotates in real 3D
+const hinge=new THREE.Group();
+hinge.position.set(0,1.52,-0.91);
+box.add(hinge);
+cube(hinge,2.62,0.2,1.98,chocolate,0,0,0.98);
+cube(hinge,0.26,0.22,2.0,gold,0,0,0.98);
+cube(hinge,2.62,0.22,0.23,gold,0,0,0.98);
+
+// Golden bow loops
+for(let side of [-1,1]){
+ const loop=new THREE.Mesh(new THREE.TorusGeometry(0.3,0.065,12,32),gold);
+ loop.position.set(side*0.22,0.17,0.98);
+ loop.rotation.y=side*0.5;
+ loop.rotation.x=0.35;
+ hinge.add(loop);
+}
+const knot=new THREE.Mesh(new THREE.SphereGeometry(0.13,20,16),gold);
+knot.position.set(0,0.18,0.98);hinge.add(knot);
+
+// Cake, initially tucked behind the gift
+const cake=new THREE.Group();
+cake.position.set(0,1.45,-0.12);
+cake.scale.setScalar(0.001);
+box.add(cake);
+
+function cylinder(parent,r1,r2,h,material,x,y,z,segments=40){
+ const m=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,segments),material);
+ m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;
+}
+cylinder(cake,0.75,0.75,0.3,mat('#f2a0c2'),0,0.12,0);
+cylinder(cake,0.7,0.7,0.32,mat('#ffe0e9'),0,0.42,0);
+cylinder(cake,0.73,0.73,0.12,pink,0,0.63,0);
+cylinder(cake,0.76,0.76,0.1,cream,0,0.73,0);
+
+// Colourful candy decorations around the icing
+const sprinkleColors=['#ffcc52','#ff6092','#76e5d0','#b7a0ff','#ffffff'];
+for(let i=0;i<34;i++){
+ const a=i*2.399;
+ const r=0.48+(i%4)*0.065;
+ const sprinkle=cube(cake,0.12,0.035,0.035,mat(sprinkleColors[i%sprinkleColors.length]),Math.cos(a)*r,0.81,Math.sin(a)*r);
+ sprinkle.rotation.y=a;
+}
+for(let i=0;i<3;i++){
+ cylinder(cake,0.035,0.035,0.35,mat(['#ff7ba8','#ffe17a','#8fe1d2'][i]),-0.3+i*0.3,1.0,0,12);
+ cylinder(cake,0.04,0.04,0.1,gold,-0.3+i*0.3,1.22,0,12);
+}
+
+// Floating golden particles
+const particleGroup=new THREE.Group();
+scene.add(particleGroup);
+for(let i=0;i<65;i++){
+ const s=0.018+Math.random()*0.035;
+ const p=new THREE.Mesh(new THREE.SphereGeometry(s,8,8),gold);
+ p.position.set((Math.random()-0.5)*6,Math.random()*4-0.1,(Math.random()-0.5)*2);
+ p.userData.speed=0.15+Math.random()*0.4;
+ particleGroup.add(p);
+}
+
+let opened=false;
+let targetRotation=0;
+let dragging=false;
+let previousX=0;
+let pointerStartX=0,pointerStartY=0;
+let moved=false;
+
+document.querySelector('#openBtn').addEventListener('click',()=>{
+ opened=!opened;
+ document.querySelector('#openBtn').textContent=opened?'CLOSE YOUR GIFT ✨':'OPEN YOUR GIFT ✨';
+});
+
+canvas.addEventListener('pointerdown',e=>{
+ dragging=true;moved=false;previousX=e.clientX;
+ pointerStartX=e.clientX;pointerStartY=e.clientY;
+ canvas.setPointerCapture(e.pointerId);
+});
+canvas.addEventListener('pointermove',e=>{
+ if(!dragging)return;
+ const dx=e.clientX-previousX;
+ if(Math.abs(e.clientX-pointerStartX)+Math.abs(e.clientY-pointerStartY)>5)moved=true;
+ targetRotation+=dx*0.012;
+ previousX=e.clientX;
+});
+canvas.addEventListener('pointerup',()=>{
+ if(dragging&&!moved){
+   // Tap the 3D scene to open or close the gift
+   opened=!opened;
+   document.querySelector('#openBtn').textContent=opened?'CLOSE YOUR GIFT ✨':'OPEN YOUR GIFT ✨';
+ }
+ dragging=false;
+});
+canvas.addEventListener('pointercancel',()=>dragging=false);
+
+function resize(){
+ const w=canvas.clientWidth,h=canvas.clientHeight;
+ if(!w||!h)return;
+ renderer.setSize(w,h,false);
+ camera.aspect=w/h;camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(canvas);
+resize();
+
+const clock=new THREE.Clock();
+function animate(){
+ requestAnimationFrame(animate);
+ const t=clock.getElapsedTime();
+ box.rotation.y+=(targetRotation-box.rotation.y)*0.08;
+ if(!dragging)targetRotation+=0.0015;
+
+ // Swing lid open on its hinge
+ const target=opened?-1.65:0;
+ hinge.rotation.x+=(target-hinge.rotation.x)*0.055;
+
+ // Cake rises into view when the gift opens
+ const desired=opened?1:0.001;
+ cake.scale.lerp(new THREE.Vector3(desired,desired,desired),0.07);
+ cake.position.y=1.45+(opened?0.25*Math.min(1,cake.scale.x):0);
+ cake.rotation.y=Math.sin(t*0.7)*0.08;
+
+ particleGroup.children.forEach(p=>{
+  p.position.y+=p.userData.speed*0.003;
+  if(p.position.y>4)p.position.y=-0.1;
+ });
+ renderer.render(scene,camera);
+}
+animate();
 </script>
 </body>
 </html>
