@@ -3,203 +3,130 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#28130f">
+<meta name="description" content="Explore Chocotia's celebration cakes, chocolates and thoughtful gifting collection.">
 <title>Chocotia | Cakes & Gifting</title>
 <style>
-:root {
-  --pink:#ffe4ed;
-  --rose:#e94f87;
-  --purple:#8b5cf6;
-  --cream:#fffaf5;
-  --ink:#35232d;
+:root{
+  --dark:#24120f;--brown:#48251d;--gold:#e9c17b;
+  --pink:#ed6e9b;--cream:#fff8f1;--ink:#39251f;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  color:var(--ink);
-  background:var(--cream);
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:75px}
+body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:var(--ink)}
+a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit}
+header{
+  position:sticky;top:0;z-index:20;display:flex;align-items:center;
+  justify-content:space-between;gap:12px;padding:15px 5%;
+  background:#fffaf5f5;backdrop-filter:blur(12px);
+  border-bottom:1px solid #e9d8c8
 }
-header {
-  padding:16px 5%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#fff;
-  position:sticky;
-  top:0;
-  z-index:5;
-  box-shadow:0 3px 18px #4b24320d;
+.logo{font-family:Georgia,serif;font-size:24px;font-weight:bold;color:#6c3427}
+.logo span{color:#bd8a43}
+nav{display:flex;gap:15px;align-items:center}
+nav a{text-decoration:none;font-size:12px;font-weight:bold}
+nav a:hover{color:#c05b80}
+.intro{
+  min-height:440px;display:grid;place-items:center;text-align:center;
+  padding:55px 6%;color:#fff4df;overflow:hidden;position:relative;
+  background:
+    radial-gradient(ellipse at 50% 110%,#93542c77,transparent 48%),
+    radial-gradient(circle at 20% 25%,#d4a35d25 0 2px,transparent 4px),
+    radial-gradient(circle at 80% 35%,#e7c57c33 0 2px,transparent 5px),
+    linear-gradient(135deg,#160b09,#45241a 55%,#21100d);
 }
-.logo { font-size:25px; font-weight:900; color:#d83e78; }
-.logo span { color:#8b5cf6; }
-nav a {
-  margin-left:12px;
-  color:var(--ink);
-  text-decoration:none;
-  font-size:13px;
-  font-weight:bold;
+.intro:before,.intro:after{
+  content:"";position:absolute;width:230px;height:230px;border:1px solid #d7ad6540;
+  border-radius:50%;animation:orbit 18s linear infinite;pointer-events:none
 }
-.hero {
-  padding:45px 6% 35px;
-  text-align:center;
-  background:linear-gradient(135deg,#ffe0eb,#fff0d8,#eee5ff);
-  overflow:hidden;
+.intro:after{width:310px;height:310px;animation-direction:reverse}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.intro-inner{position:relative;z-index:1;max-width:650px}
+.eyebrow{color:var(--gold);font-size:11px;letter-spacing:3px;text-transform:uppercase}
+.intro h1{font:clamp(45px,10vw,82px)/.98 Georgia,serif;margin:22px 0;letter-spacing:-2px}
+.intro h1 span{color:var(--gold);font-style:italic}
+.intro p{max-width:450px;margin:0 auto;color:#f1ddc8;line-height:1.8;font-size:14px}
+.gold-btn,.pink-btn{
+  display:inline-flex;justify-content:center;align-items:center;gap:8px;
+  padding:14px 22px;border-radius:30px;text-decoration:none;font-size:13px;
+  font-weight:bold;transition:transform .25s,box-shadow .25s
 }
-.pill {
-  display:inline-block;
-  background:white;
-  padding:8px 14px;
-  border-radius:30px;
-  color:#c73870;
-  font-size:12px;
-  font-weight:bold;
+.gold-btn{margin-top:25px;background:linear-gradient(120deg,#f5dda3,#c7974c);color:#29140e}
+.pink-btn{background:#e64f87;color:white;margin-top:12px}
+.gold-btn:hover,.pink-btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px #0002}
+.hero-image{
+  width:min(100%,430px);height:220px;object-fit:cover;display:block;
+  margin:35px auto 0;border:1px solid #e8c98788;border-radius:18px;
+  box-shadow:0 22px 60px #0008;animation:rise 1s ease both
 }
-h1 {
-  font-size:clamp(36px,9vw,65px);
-  line-height:1.04;
-  margin:22px 0 14px;
-  letter-spacing:-2px;
+@keyframes rise{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+section{padding:52px 5%}
+.heading{text-align:center;margin:0 auto 27px;max-width:560px}
+.kicker{color:#bb7b3e;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:bold}
+.heading h2{font:clamp(28px,6vw,42px)/1.15 Georgia,serif;margin:12px 0}
+.heading p{color:#826d62;font-size:14px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.card{
+  background:white;border-radius:18px;overflow:hidden;
+  border:1px solid #f0e3d8;box-shadow:0 8px 25px #4321140b;
+  transition:transform .25s,box-shadow .25s
 }
-h1 span { color:#e44883; }
-.hero p {
-  max-width:440px;
-  margin:0 auto;
-  line-height:1.7;
-  color:#6c5260;
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 32px #43211418}
+.card img{display:block;width:100%;height:145px;object-fit:cover;background:#f4e3dc}
+.card-content{padding:13px}
+.card h3{font: bold 17px Georgia,serif;margin:0 0 8px}
+.card p{font-size:12px;color:#816c62;line-height:1.6;margin:0}
+.card a{display:inline-block;margin-top:12px;text-decoration:none;color:#b45c69;font-size:12px;font-weight:bold}
+.gift-section{background:linear-gradient(145deg,#fff0f5,#f9eddf 55%,#f0e8ff)}
+.gift-section .card{background:#fffdfb}
+.contact{
+  text-align:center;background:linear-gradient(135deg,#2b1712,#4c281c);
+  color:#fff5e8;border-radius:25px;padding:32px 20px
 }
-.btn {
-  display:inline-block;
-  margin-top:22px;
-  background:#e44883;
-  color:white;
-  padding:14px 22px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 8px 22px #e4488340;
+.contact h2{font:clamp(28px,6vw,40px) Georgia,serif}
+.contact p{font-size:14px;line-height:1.8;color:#eedbca}
+footer{padding:30px 5%;text-align:center;background:#1d100d;color:#f6e7d5;font-size:12px;line-height:1.8}
+footer p{color:#c9b2a3}
+.whatsapp{
+  position:fixed;z-index:30;right:15px;bottom:15px;
+  background:#188653;color:white;text-decoration:none;border-radius:30px;
+  padding:14px 17px;font-weight:bold;font-size:12px;box-shadow:0 5px 20px #0003
 }
-.hero-art {
-  margin:32px auto 0;
-  max-width:420px;
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:0 15px 35px #6b365322;
-  animation:float 4s ease-in-out infinite;
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(min-width:700px){
+  .intro{min-height:590px;padding:75px 8%}
+  .hero-image{height:300px}
+  section{padding:70px 8%}
+  .grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+  .card img{height:220px}
+  .card-content{padding:17px}
 }
-.hero-art img {
-  display:block;
-  width:100%;
-  height:245px;
-  object-fit:cover;
+@media(max-width:390px){
+  header{padding:13px 4%;gap:7px}
+  .logo{font-size:20px}
+  nav{gap:9px}
+  nav a{font-size:11px}
+  .intro{min-height:410px;padding:45px 5%}
+  .hero-image{height:190px}
+  .card img{height:120px}
+  .card h3{font-size:15px}
+  .whatsapp{right:10px;bottom:10px;padding:12px 14px}
 }
-@keyframes float {
-  0%,100% { transform:translateY(0); }
-  50% { transform:translateY(-7px); }
-}
-section { padding:42px 5%; }
-.section-head { text-align:center; margin-bottom:24px; }
-.eyebrow {
-  color:#d83e78;
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-h2 { font-size:30px; margin:10px 0; }
-.section-head p { color:#806b75; line-height:1.6; }
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:13px;
-}
-.card {
-  background:#fff;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 5px 20px #5b29320b;
-  transition:transform .25s;
-}
-.card:hover { transform:translateY(-4px); }
-.card img {
-  display:block;
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  background:#f8e6ed;
-}
-.card-content { padding:13px; }
-.card h3 { font-size:15px; margin:0 0 7px; }
-.card p {
-  font-size:12px;
-  color:#806b75;
-  line-height:1.5;
-  margin:0;
-}
-.card a {
-  display:block;
-  margin-top:12px;
-  color:#d83e78;
-  font-weight:bold;
-  font-size:12px;
-  text-decoration:none;
-}
-.gifts {
-  background:linear-gradient(135deg,#fff0f5,#f0e9ff);
-}
-.note {
-  background:#fff;
-  border:1px solid #f3d9e4;
-  border-radius:18px;
-  padding:20px;
-  text-align:center;
-  line-height:1.7;
-}
-footer {
-  padding:30px 6%;
-  text-align:center;
-  background:#35232d;
-  color:white;
-  font-size:13px;
-  line-height:1.8;
-}
-footer p { color:#f4dbe5; }
-.whatsapp {
-  position:fixed;
-  right:16px;
-  bottom:16px;
-  z-index:10;
-  background:#168b55;
-  color:white;
-  border-radius:40px;
-  padding:14px 18px;
-  text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 6px 20px #0002;
-  font-size:13px;
-}
-@media(min-width:700px) {
-  .hero { padding:65px 8%; }
-  .hero-art img { height:330px; }
-  section { padding:60px 8%; }
-  .grid { grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
-  .card img { height:210px; }
-  .card-content { padding:17px; }
-}
-@media(max-width:360px) {
-  nav a { margin-left:5px; font-size:11px; }
-  .logo { font-size:21px; }
-  .grid { gap:9px; }
-  .card img { height:125px; }
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">Chocotia<span>♥</span></div>
-  <nav>
+  <a class="logo" href="#home" style="text-decoration:none">Chocotia<span> ♥</span></a>
+  <nav aria-label="Main navigation">
     <a href="#cakes">Cakes</a>
     <a href="#gifts">Gifting</a>
     <a href="#contact">Contact</a>
@@ -207,89 +134,103 @@ footer p { color:#f4dbe5; }
 </header>
 
 <main>
-  <div class="hero">
-    <span class="pill">SWEET MOMENTS, BEAUTIFULLY MADE ✨</span>
-    <h1>A Little More<br><span>Sweetness.</span></h1>
-    <p>Beautiful theme cakes, thoughtful gifts and delightful treats for your most special moments.</p>
-    <a class="btn" href="#cakes">Explore Our Collection ↓</a>
-    <div class="hero-art">
-      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80" alt="Decorated celebration cake">
+  <section class="intro" id="home">
+    <div class="intro-inner">
+      <div class="eyebrow">Artisan Cakes • Chocolates • Gifting</div>
+      <h1>A World of<br><span>Sweet Wonders</span></h1>
+      <p>Made for your celebrations. Beautiful cakes, indulgent chocolate treats and thoughtful gifts for moments worth remembering.</p>
+      <a class="gold-btn" href="#cakes">Explore the Collection ↓</a>
+      <img class="hero-image" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=80" alt="Decorated celebration cake" fetchpriority="high">
     </div>
-  </div>
+  </section>
 
   <section id="cakes">
-    <div class="section-head">
-      <div class="eyebrow">Made for your moments</div>
-      <h2>Our Cake Collection 🎂</h2>
-      <p>From colourful birthdays to unforgettable celebrations.</p>
+    <div class="heading reveal">
+      <div class="kicker">A little extra magic</div>
+      <h2>Cakes for Every Celebration 🎂</h2>
+      <p>From playful birthday themes to elegant wedding creations, discover inspiration for your next celebration.</p>
     </div>
     <div class="grid">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=600&q=80" alt="Birthday cake">
-        <div class="card-content"><h3>Birthday Cakes</h3><p>Make their special day sweeter.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=650&q=80" alt="Birthday cake">
+        <div class="card-content"><h3>Birthday Cakes</h3><p>Colourful designs for unforgettable birthdays.</p><a href="#contact">Ask about a cake →</a></div>
       </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?auto=format&fit=crop&w=600&q=80" alt="Colourful celebration cake">
-        <div class="card-content"><h3>Theme Cakes</h3><p>Personalised designs for every dream.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=650&q=80" alt="Decorated theme cake">
+        <div class="card-content"><h3>Theme Cakes</h3><p>Bring a favourite idea to life.</p><a href="#contact">Ask about a cake →</a></div>
       </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=600&q=80" alt="Decorated cake">
-        <div class="card-content"><h3>Wedding Cakes</h3><p>Elegant treats for your big day.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=650&q=80" alt="Elegant celebration cake">
+        <div class="card-content"><h3>Wedding Cakes</h3><p>Elegant inspiration for your special day.</p><a href="#contact">Ask about a cake →</a></div>
       </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=600&q=80" alt="Celebration cake">
-        <div class="card-content"><h3>Custom Cakes</h3><p>Share your idea and dream it up.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=650&q=80" alt="Custom cake and desserts">
+        <div class="card-content"><h3>Custom Cakes</h3><p>Share your vision for a personal creation.</p><a href="#contact">Ask about a cake →</a></div>
       </article>
     </div>
   </section>
 
-  <section class="gifts" id="gifts">
-    <div class="section-head">
-      <div class="eyebrow">Gifts that feel special</div>
-      <h2>Thoughtful Gifting 🎁</h2>
-      <p>Little surprises, grand celebrations and gifts from the heart.</p>
+  <section class="gift-section" id="gifts">
+    <div class="heading reveal">
+      <div class="kicker">Wrapped with love</div>
+      <h2>Gifting, Made Special 🎁</h2>
+      <p>Explore gifting inspiration for festivals, loved ones and thoughtful business gestures.</p>
     </div>
     <div class="grid">
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80" alt="Wrapped gift">
-        <div class="card-content"><h3>Gift Hampers</h3><p>Beautifully presented surprises.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=650&q=80" alt="Wrapped gift box">
+        <div class="card-content"><h3>Gift Hampers</h3><p>Thoughtful treats, beautifully presented.</p><a href="#contact">Enquire →</a></div>
       </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" alt="Chocolate treats">
-        <div class="card-content"><h3>Chocolate Gifts</h3><p>A sweet way to say you care.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=650&q=80" alt="Chocolate treats">
+        <div class="card-content"><h3>Chocolate Gifts</h3><p>A delicious way to share a little joy.</p><a href="#contact">Enquire →</a></div>
       </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=600&q=80" alt="Gift box">
-        <div class="card-content"><h3>Festive Gifts</h3><p>Celebrate every occasion in style.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?auto=format&fit=crop&w=650&q=80" alt="Decorative gift packaging">
+        <div class="card-content"><h3>Festive Gifts</h3><p>Celebrate special occasions with care.</p><a href="#contact">Enquire →</a></div>
       </article>
-      <article class="card">
-        <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=600&q=80" alt="Gift box and ribbon">
-        <div class="card-content"><h3>Corporate Gifts</h3><p>Thoughtful gifts for teams and clients.</p><a href="#contact">Enquire →</a></div>
+      <article class="card reveal">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=650&q=80" alt="Gift box with ribbon">
+        <div class="card-content"><h3>Corporate Gifts</h3><p>Considered gifting for teams and clients.</p><a href="#contact">Enquire →</a></div>
       </article>
     </div>
   </section>
 
   <section id="contact">
-    <div class="section-head">
-      <div class="eyebrow">Let's make it special</div>
-      <h2>Have Something in Mind? 💗</h2>
-      <p>Tell us about your occasion, preferred design and date.</p>
-    </div>
-    <div class="note">
-      <strong>Personalised cakes & gifting</strong><br>
-      Every celebration starts with an idea.<br>
-      Tap below to enquire about your requirements.
-      <br><a class="btn" href="https://wa.me/?text=Hi%20Chocotia!%20I%27d%20like%20to%20enquire%20about%20your%20cakes%20and%20gifting." target="_blank" rel="noopener">Enquire on WhatsApp</a>
+    <div class="contact reveal">
+      <div class="eyebrow">Make their moment sweeter</div>
+      <h2>Let's Create Something Special</h2>
+      <p>Have a cake theme or gifting idea in mind?<br>Start an enquiry to discuss your requirements.</p>
+      <a class="gold-btn" href="https://wa.me/?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20enquire%20about%20cakes%20and%20gifting." target="_blank" rel="noopener">Enquire on WhatsApp ↗</a>
     </div>
   </section>
 </main>
 
 <footer>
-  <strong>Chocotia ♥</strong>
+  <div class="logo" style="color:#f1d49a">Chocotia ♥</div>
   <p>Cakes, chocolates & thoughtful gifting.</p>
-  <small>Unofficial website demo concept · For presentation only</small>
+  <small>Independent concept demo · Not the official Chocotia website</small>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20enquire." target="_blank" rel="noopener" aria-label="Open WhatsApp enquiry">WhatsApp ↗</a>
+
+<script>
+(function(){
+  const items=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    items.forEach(el=>el.classList.add('visible'));
+    return;
+  }
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12});
+  items.forEach(el=>observer.observe(el));
+})();
+</script>
 </body>
-  </html>
-  
+</html>
