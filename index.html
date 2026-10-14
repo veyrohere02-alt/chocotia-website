@@ -4,213 +4,391 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chocotia | Sweetness in Every Moment</title>
-<meta name="theme-color" content="#180b0b">
+<meta name="theme-color" content="#1b0b09">
+<title>Chocotia | Artisan Cakes & Sweet Gifts</title>
+<meta name="description" content="Discover cakes, chocolate treats and sweet gifts from Chocotia, Wadala East, Mumbai. Enquire about your celebration cake.">
 <style>
+:root{--bg:#1b0b09;--panel:#2a1510;--gold:#f2c47b;--cream:#fff5e8;--muted:#d2b9a8}
 *{box-sizing:border-box}
-body{margin:0;background:#180b0b;color:#fff5e8;font-family:Arial,sans-serif}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 6%;border-bottom:1px solid #ffffff18}
-.logo{font-size:25px;font-weight:900;letter-spacing:2px;color:#f4c77b}
-nav a{color:#fff;text-decoration:none;font-size:13px}
-.hero{min-height:88vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:35px 6%;gap:20px;background:radial-gradient(ellipse at 70% 45%,#66301d 0%,#321615 35%,#180b0b 75%)}
-.eyebrow{color:#e9bc78;letter-spacing:4px;font-size:11px;text-transform:uppercase}
-h1{font-family:Georgia,serif;font-size:clamp(44px,6vw,76px);line-height:1.03;margin:18px 0}
-h1 em{color:#edbd78;font-weight:400}
-.desc{color:#e4cfc1;line-height:1.8;max-width:440px;font-size:15px}
-.btn{border:0;background:#edbd78;color:#32140f;padding:15px 24px;border-radius:30px;font-weight:bold;cursor:pointer;margin:10px 8px 0 0}
-.btn.alt{background:transparent;border:1px solid #edbd78;color:#ffe1ae}
-.scene-wrap{position:relative;min-width:0}
-#scene{width:100%;height:430px;display:block;touch-action:pan-y;cursor:grab}
-.hint{text-align:center;color:#d4b9a3;font-size:11px;letter-spacing:1px}
-.section{padding:65px 6%;text-align:center}
-.section h2{font:40px Georgia,serif;margin:10px}
-.section p{color:#cdb5a5;line-height:1.7}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;text-align:left}
-.card{border:1px solid #ffffff17;background:#281311;border-radius:18px;overflow:hidden}
-.card .pic{height:150px;display:grid;place-items:center;font-size:65px;background:linear-gradient(140deg,#51251c,#281311)}
-.card h3{font:23px Georgia,serif;margin:18px 18px 8px}
-.card p{margin:0 18px 20px;font-size:13px}
-footer{text-align:center;padding:28px;color:#bda79a;border-top:1px solid #ffffff17;font-size:12px}
-@media(max-width:700px){.hero{grid-template-columns:1fr;padding-top:45px;gap:0}.hero-copy{text-align:center}.desc{margin:0 auto}.scene-wrap{grid-row:1}#scene{height:320px}h1{font-size:49px}.cards{grid-template-columns:1fr 1fr}.section h2{font-size:34px}}
-@media(max-width:390px){.cards{grid-template-columns:1fr}#scene{height:290px}}
+html{scroll-behavior:smooth;scroll-padding-top:75px}
+body{margin:0;background:var(--bg);color:var(--cream);font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:15px 6%;background:#1b0b09f5;border-bottom:1px solid #ffffff18;backdrop-filter:blur(12px)}
+.logo{font-size:23px;font-weight:900;letter-spacing:2px;color:var(--gold)}
+.navlinks{display:flex;align-items:center;gap:20px;font-size:13px}
+.navlinks a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:14px 20px;border-radius:30px;background:var(--gold);color:#32150f;border:1px solid var(--gold);font-size:13px;font-weight:bold;cursor:pointer;transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.outline{background:transparent;color:var(--cream)}
+.btn.small{padding:10px 14px;font-size:12px}
+.hero{min-height:570px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:18px;padding:38px 7%;background:radial-gradient(ellipse at 75% 42%,#69351f,#321611 40%,#1b0b09 76%)}
+.eyebrow{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+h1,h2,h3{font-family:Georgia,serif}
+h1{font-size:clamp(45px,6vw,76px);line-height:1.04;margin:20px 0}
+h1 em{color:var(--gold);font-weight:normal}
+.hero p{max-width:450px;color:var(--muted);font-size:15px;line-height:1.85}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+#scene{display:block;width:100%;height:410px;touch-action:pan-y;cursor:grab}
+.hint{text-align:center;color:#e5c9ad;font-size:10px;letter-spacing:2px}
+.section{padding:72px 7%}
+.head{text-align:center;max-width:680px;margin:0 auto 34px}
+.head h2{font-size:clamp(32px,4vw,46px);margin:12px 0}
+.head p{color:var(--muted);font-size:14px;line-height:1.8}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.cat{display:block;text-align:center;padding:24px 12px;border:1px solid #ffffff18;border-radius:16px;background:linear-gradient(145deg,#321b15,#24110e);transition:.2s}
+.cat:hover{transform:translateY(-4px);border-color:var(--gold)}
+.emoji{font-size:37px}
+.cat h3{font-size:20px;margin:13px 0 8px}
+.cat p{font-size:12px;color:var(--muted);line-height:1.6}
+.products{background:#21100d}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.product{overflow:hidden;border:1px solid #ffffff18;border-radius:17px;background:#2b1712}
+.product img{display:block;width:100%;height:220px;object-fit:cover;background:#42251a}
+.product-info{padding:17px}
+.product h3{font-size:22px;margin:0 0 8px}
+.product p{font-size:13px;line-height:1.65;color:var(--muted);min-height:42px}
+.product .btn{margin-top:8px}
+.disclaimer{text-align:center;color:#bda597;font-size:11px;line-height:1.7;margin:22px auto 0;max-width:700px}
+.about{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px}
+.about-img{width:100%;height:340px;object-fit:cover;border-radius:18px}
+.about h2{font-size:clamp(32px,4vw,46px);line-height:1.12}
+.about p{color:var(--muted);font-size:14px;line-height:1.9}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{padding:22px;border:1px solid #ffffff18;border-radius:15px;background:#28130f}
+.step b{color:var(--gold);font-size:12px;letter-spacing:2px}
+.step h3{font-size:20px}
+.step p{font-size:13px;line-height:1.7;color:var(--muted)}
+.faq{max-width:800px;margin:auto}
+details{padding:18px 0;border-bottom:1px solid #ffffff20}
+summary{cursor:pointer;font-weight:bold}
+details p{font-size:14px;color:var(--muted);line-height:1.7}
+.contact{background:radial-gradient(ellipse at center,#55271a,#1b0b09 70%)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:auto}
+.contact-card{padding:24px;border:1px solid #ffffff20;background:#2a1510;border-radius:16px}
+.contact-card h3{font-size:23px;margin-top:0}
+.contact-card p{color:var(--muted);font-size:14px;line-height:1.8}
+.contact-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}
+footer{padding:30px 7%;text-align:center;border-top:1px solid #ffffff18;color:#cbb4a4;font-size:12px;line-height:2}
+footer .logo{display:block;margin-bottom:9px}
+.float-wa{position:fixed;right:17px;bottom:17px;z-index:15;width:55px;height:55px;border-radius:50%;background:#20bd67;color:white;display:grid;place-items:center;font-size:26px;box-shadow:0 5px 22px #0008}
+@media(max-width:750px){
+ nav{padding:14px 5%}.navlinks{gap:12px;font-size:11px}.hide-mobile{display:none}
+ .hero{grid-template-columns:1fr;padding:25px 6% 42px;text-align:center}
+ .hero-copy{grid-row:2}.hero p{margin:auto}.actions{justify-content:center}
+ #scene{height:300px}.hint{margin-bottom:15px}
+ .section{padding:56px 6%}.categories{grid-template-columns:repeat(2,1fr)}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .product img{height:155px}.product-info{padding:12px}.product h3{font-size:19px}.product p{font-size:12px}
+ .about{grid-template-columns:1fr;gap:20px}.about-img{height:250px}
+ .steps{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}
+ .btn{padding:13px 15px}
+}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.product img{height:220px}.logo{font-size:19px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
+
 <nav>
-  <div class="logo">CHOCO<span style="color:white">TIA.</span></div>
-  <a href="#collection">OUR COLLECTION ↗</a>
+  <a class="logo" href="#home">CHOCO<span style="color:white">TIA.</span></a>
+  <div class="navlinks">
+    <a href="#categories">Categories</a>
+    <a href="#collection">Collection</a>
+    <a class="hide-mobile" href="#about">About</a>
+    <a class="btn small" href="#contact">Contact ↗</a>
+  </div>
 </nav>
 
-<main>
-<section class="hero">
+<header class="hero" id="home">
   <div class="hero-copy">
-    <div class="eyebrow">Handcrafted with love</div>
-    <h1>A little box<br>of <em>happiness.</em></h1>
-    <p class="desc">Beautiful cakes, thoughtful chocolate gifts and sweet surprises made to turn your special moments into unforgettable memories.</p>
-    <button class="btn" id="openBtn">OPEN YOUR GIFT ✨</button>
-    <button class="btn alt" onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})">EXPLORE SWEETS</button>
+    <div class="eyebrow">Artisan bakes · Made for your moments</div>
+    <h1>Make every<br>moment <em>sweeter.</em></h1>
+    <p>Discover delightful cakes, chocolate treats and thoughtful gifts for birthdays, celebrations and the people who make life special.</p>
+    <div class="actions">
+      <a class="btn" href="#collection">Explore Collection ↓</a>
+      <a class="btn outline" href="https://wa.me/919818896929?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20enquire%20about%20your%20cakes%20and%20gifts.">Enquire on WhatsApp ↗</a>
+    </div>
   </div>
-  <div class="scene-wrap">
-    <canvas id="scene" aria-label="Interactive 3D chocolate gift box and cake"></canvas>
-    <div class="hint">✦ DRAG TO ROTATE · TAP OPEN YOUR GIFT ✦</div>
+  <div>
+    <canvas id="scene" aria-label="Interactive 3D chocolate gift box"></canvas>
+    <div class="hint">✦ DRAG TO ROTATE · TAP TO OPEN ✦</div>
+  </div>
+</header>
+
+<section class="section" id="categories">
+  <div class="head">
+    <div class="eyebrow">Find your favourite</div>
+    <h2>A Treat for Every Occasion</h2>
+    <p>Explore sweet ideas for birthdays, celebrations and thoughtful gifting.</p>
+  </div>
+  <div class="categories">
+    <a class="cat" href="#collection"><div class="emoji">🎂</div><h3>Birthday Cakes</h3><p>Make their special day memorable.</p></a>
+    <a class="cat" href="#collection"><div class="emoji">🦄</div><h3>Theme Cakes</h3><p>Colourful ideas for celebrations.</p></a>
+    <a class="cat" href="#collection"><div class="emoji">🍫</div><h3>Chocolate Treats</h3><p>Sweet surprises for someone special.</p></a>
+    <a class="cat" href="#collection"><div class="emoji">🎁</div><h3>Gift Hampers</h3><p>Thoughtful gifts for happy moments.</p></a>
   </div>
 </section>
 
-<section class="section" id="collection">
-  <div class="eyebrow">Made for your moments</div>
-  <h2>Sweeten Every Celebration</h2>
-  <p>A little something special for every occasion.</p>
-  <div class="cards">
-    <article class="card"><div class="pic">🎂</div><h3>Celebration Cakes</h3><p>Colourful cakes for birthdays and happy occasions.</p></article>
-    <article class="card"><div class="pic">🍫</div><h3>Chocolate Gifts</h3><p>Sweet surprises for the people you love.</p></article>
-    <article class="card"><div class="pic">🎁</div><h3>Gift Hampers</h3><p>Thoughtfully styled gifts for special moments.</p></article>
+<section class="section products" id="collection">
+  <div class="head">
+    <div class="eyebrow">A little something delicious</div>
+    <h2>Explore the Sweet Collection</h2>
+    <p>Found something you love? Enquire directly with Chocotia about availability and custom orders.</p>
+  </div>
+  <div class="grid">
+    <article class="product">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Decorated celebration cake">
+      <div class="product-info"><h3>Celebration Cakes</h3><p>Beautiful cake ideas for birthdays and special moments.</p><a class="btn small order-link" data-product="Celebration Cakes" href="https://wa.me/919818896929">Enquire about this ↗</a></div>
+    </article>
+    <article class="product">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?auto=format&fit=crop&w=800&q=80" alt="Colourful cake inspiration">
+      <div class="product-info"><h3>Theme Cakes</h3><p>Creative inspiration for personalised celebrations.</p><a class="btn small order-link" data-product="Theme Cakes" href="https://wa.me/919818896929">Enquire about this ↗</a></div>
+    </article>
+    <article class="product">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1548907040-4d42e3b8f5f4?auto=format&fit=crop&w=800&q=80" alt="Chocolate treats inspiration">
+      <div class="product-info"><h3>Chocolate Treats</h3><p>Chocolate-inspired gifts and sweet surprises.</p><a class="btn small order-link" data-product="Chocolate Treats" href="https://wa.me/919818896929">Enquire about this ↗</a></div>
+    </article>
+    <article class="product">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80" alt="Chocolate dessert inspiration">
+      <div class="product-info"><h3>Chocolate Desserts</h3><p>A rich-looking treat for chocolate lovers.</p><a class="btn small order-link" data-product="Chocolate Desserts" href="https://wa.me/919818896929">Enquire about this ↗</a></div>
+    </article>
+    <article class="product">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=800&q=80" alt="Gift wrapping inspiration">
+      <div class="product-info"><h3>Gift Hampers</h3><p>Gift inspiration for celebrations and special occasions.</p><a class="btn small order-link" data-product="Gift Hampers" href="https://wa.me/919818896929">Enquire about this ↗</a></div>
+    </article>
+    <article class="product">
+      <img loading="lazy" src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80" alt="Cupcakes and sweet treats">
+      <div class="product-info"><h3>Sweet Treats</h3><p>Explore ideas for sharing something sweet.</p><a class="btn small order-link" data-product="Sweet Treats" href="https://wa.me/919818896929">Enquire about this ↗</a></div>
+    </article>
+  </div>
+  <p class="disclaimer">Demo gallery: images are illustrative and may not show actual Chocotia products. Confirm product options, prices and availability directly with the business.</p>
+</section>
+
+<section class="section" id="about">
+  <div class="about">
+    <img class="about-img" loading="lazy" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80" alt="Cake inspiration for celebrations">
+    <div>
+      <div class="eyebrow">A sweeter kind of celebration</div>
+      <h2>Make Your Moments Memorable</h2>
+      <p>Whether you are planning a birthday, celebrating a milestone or looking for a thoughtful sweet gift, start a conversation with Chocotia to explore suitable options.</p>
+      <p>This website is a concept demo. Product details, customisation options, prices and availability should be confirmed with the business.</p>
+      <a class="btn" href="https://wa.me/919818896929?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20know%20more%20about%20your%20products.">Ask Chocotia ↗</a>
+    </div>
   </div>
 </section>
-</main>
-<footer>CHOCO TIA · A SWEET LITTLE CONCEPT WEBSITE</footer>
+
+<section class="section">
+  <div class="head">
+    <div class="eyebrow">Your next sweet moment</div>
+    <h2>How to Enquire</h2>
+    <p>Start with an enquiry and confirm the details directly with Chocotia.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><b>01 · EXPLORE</b><h3>Choose an idea</h3><p>Browse the illustrative cake, chocolate and gift categories.</p></div>
+    <div class="step"><b>02 · MESSAGE</b><h3>Send an enquiry</h3><p>Use WhatsApp to describe what you are looking for.</p></div>
+    <div class="step"><b>03 · CONFIRM</b><h3>Discuss the details</h3><p>Confirm design, price, availability, delivery and timing with the business.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="head">
+    <div class="eyebrow">Good to know</div>
+    <h2>Frequently Asked Questions</h2>
+  </div>
+  <div class="faq">
+    <details><summary>How do I enquire about a cake?</summary><p>Tap an enquiry button to open WhatsApp, then describe the cake or gift you are interested in.</p></details>
+    <details><summary>Can I ask about a custom design?</summary><p>Yes, you can ask the business whether your preferred design is possible. Customisation must be confirmed by Chocotia.</p></details>
+    <details><summary>Where is Chocotia located?</summary><p>The provided Google Maps listing gives the address shown below. Use the directions button to open the map.</p></details>
+    <details><summary>Are the photos and prices on this demo official?</summary><p>No. The gallery uses illustrative images, and no product prices are listed. Confirm actual products and prices directly with Chocotia.</p></details>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="head">
+    <div class="eyebrow">Let's make something sweet</div>
+    <h2>Say Hello to Chocotia</h2>
+    <p>Questions about cakes, chocolates or gifting? Contact the business directly to discuss your requirements.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Contact Details</h3>
+      <p><strong>Business:</strong> Chocotia – Artisan Bakes</p>
+      <p><strong>Address:</strong> Gate No. 5, Lodha New Cuff Parade, Wadala East, Mumbai, Maharashtra 400037</p>
+      <p><strong>Listed phone:</strong> +91 98188 96929</p>
+      <div class="contact-actions">
+        <a class="btn" href="https://wa.me/919818896929?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20enquire.">WhatsApp ↗</a>
+        <a class="btn outline" href="tel:+919818896929">Call ↗</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h3>Find Chocotia</h3>
+      <p>Open the Google Maps listing to check the location, directions and current business information.</p>
+      <p>For opening hours, delivery, pickup and order timing, please confirm directly with the business.</p>
+      <div class="contact-actions">
+        <a class="btn" href="https://maps.app.goo.gl/T5j3drfm8xJBC3MX6" target="_blank" rel="noopener">Get Directions ↗</a>
+      </div>
+    </div>
+  </div>
+  <p class="disclaimer">This is an independent website concept demo, not the official Chocotia website. Contact details and listing information should be rechecked before launch.</p>
+</section>
+
+<footer>
+  <span class="logo">CHOCOTIA.</span>
+  Cakes · Chocolate Treats · Sweet Gifts<br>
+  Wadala East, Mumbai<br>
+  <a href="#home">Back to top ↑</a>
+</footer>
+
+<a class="float-wa" href="https://wa.me/919818896929?text=Hi%20Chocotia%2C%20I%27d%20like%20to%20enquire." aria-label="Message Chocotia on WhatsApp">☏</a>
+
+<script>
+document.querySelectorAll('.order-link').forEach(function(link){
+  const product=link.dataset.product || 'your products';
+  link.href='https://wa.me/919818896929?text='+encodeURIComponent('Hi Chocotia, I would like to enquire about '+product+'. Please share availability and details.');
+  link.target='_blank';
+  link.rel='noopener';
+});
+</script>
 
 <script type="module">
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
 
-const canvas = document.querySelector('#scene');
-const scene = new THREE.Scene();
-scene.background = null;
-
-const camera = new THREE.PerspectiveCamera(36,1,0.1,100);
+const canvas=document.getElementById('scene');
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(36,1,0.1,100);
 camera.position.set(0,2.6,8.5);
 camera.lookAt(0,1,0);
 
-const renderer = new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
 renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.5));
 renderer.shadowMap.enabled=true;
-renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.toneMapping=THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure=1.35;
+renderer.toneMappingExposure=1.25;
 
-scene.add(new THREE.HemisphereLight(0xffe4cc,0x35130f,2.2));
-const keyLight=new THREE.DirectionalLight(0xffd39a,3.5);
-keyLight.position.set(4,7,5);
-keyLight.castShadow=true;
-scene.add(keyLight);
-const pinkLight=new THREE.PointLight(0xff4585,35,10);
+scene.add(new THREE.HemisphereLight(0xffe6d0,0x35130f,2));
+const light=new THREE.DirectionalLight(0xffd39a,3);
+light.position.set(4,7,5);
+light.castShadow=true;
+scene.add(light);
+const pinkLight=new THREE.PointLight(0xff4585,25,10);
 pinkLight.position.set(-3,2,2);
 scene.add(pinkLight);
-const goldLight=new THREE.PointLight(0xffb34a,30,10);
+const goldLight=new THREE.PointLight(0xffb34a,25,10);
 goldLight.position.set(3,4,-2);
 scene.add(goldLight);
 
-const mat=(color,metalness=0,roughness=0.35)=>new THREE.MeshStandardMaterial({color,metalness,roughness});
-const chocolate=mat('#542319',0.2,0.25);
-const darkChocolate=mat('#2b100d',0.1,0.22);
-const gold=mat('#f6bd59',0.75,0.22);
-const pink=mat('#ed6b9b',0.1,0.25);
-const cream=mat('#fff0d4',0,0.4);
+function material(color,metalness=0,roughness=.32){
+ return new THREE.MeshStandardMaterial({color,metalness,roughness});
+}
+const chocolate=material('#542319',.12,.26);
+const gold=material('#f6bd59',.72,.22);
 const box=new THREE.Group();
 scene.add(box);
 
-function cube(parent,w,h,d,material,x,y,z){
- const mesh=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),material);
- mesh.position.set(x,y,z);mesh.castShadow=true;mesh.receiveShadow=true;
- parent.add(mesh);return mesh;
+function cube(parent,w,h,d,mat,x,y,z){
+ const mesh=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);
+ mesh.position.set(x,y,z);
+ mesh.castShadow=true;
+ mesh.receiveShadow=true;
+ parent.add(mesh);
+ return mesh;
+}
+function cylinder(parent,r1,r2,h,mat,x,y,z,segments=32){
+ const mesh=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,segments),mat);
+ mesh.position.set(x,y,z);
+ mesh.castShadow=true;
+ parent.add(mesh);
+ return mesh;
 }
 
-// 3D gift box base
-cube(box,2.5,1.35,1.9,chocolate,0,0.78,0);
-cube(box,2.53,0.08,1.93,gold,0,1.47,0);
+// Gift box base and ribbons
+cube(box,2.5,1.35,1.9,chocolate,0,.78,0);
+cube(box,2.53,.08,1.93,gold,0,1.47,0);
+cube(box,.25,1.37,1.94,gold,0,.78,0);
+cube(box,2.52,1.37,.23,gold,0,.78,0);
 
-// Satin ribbon wrapping around the box
-cube(box,0.25,1.37,1.94,gold,0,0.78,0);
-cube(box,2.52,1.37,0.23,gold,0,0.78,0);
-
-// Hinged lid: this pivot rotates in real 3D
+// Hinged 3D lid
 const hinge=new THREE.Group();
-hinge.position.set(0,1.52,-0.91);
+hinge.position.set(0,1.52,-.91);
 box.add(hinge);
-cube(hinge,2.62,0.2,1.98,chocolate,0,0,0.98);
-cube(hinge,0.26,0.22,2.0,gold,0,0,0.98);
-cube(hinge,2.62,0.22,0.23,gold,0,0,0.98);
+cube(hinge,2.62,.2,1.98,chocolate,0,0,.98);
+cube(hinge,.26,.22,2,gold,0,0,.98);
+cube(hinge,2.62,.22,.23,gold,0,0,.98);
 
-// Golden bow loops
-for(let side of [-1,1]){
- const loop=new THREE.Mesh(new THREE.TorusGeometry(0.3,0.065,12,32),gold);
- loop.position.set(side*0.22,0.17,0.98);
- loop.rotation.y=side*0.5;
- loop.rotation.x=0.35;
+// Decorative golden bow
+for(const side of [-1,1]){
+ const loop=new THREE.Mesh(new THREE.TorusGeometry(.3,.065,12,28),gold);
+ loop.position.set(side*.22,.17,.98);
+ loop.rotation.y=side*.5;
+ loop.rotation.x=.35;
  hinge.add(loop);
 }
-const knot=new THREE.Mesh(new THREE.SphereGeometry(0.13,20,16),gold);
-knot.position.set(0,0.18,0.98);hinge.add(knot);
+const knot=new THREE.Mesh(new THREE.SphereGeometry(.13,16,12),gold);
+knot.position.set(0,.18,.98);
+hinge.add(knot);
 
-// Cake, initially tucked behind the gift
+// Cake inside the gift
 const cake=new THREE.Group();
-cake.position.set(0,1.45,-0.12);
-cake.scale.setScalar(0.001);
+cake.position.set(0,1.45,-.12);
+cake.scale.setScalar(.001);
 box.add(cake);
 
-function cylinder(parent,r1,r2,h,material,x,y,z,segments=40){
- const m=new THREE.Mesh(new THREE.CylinderGeometry(r1,r2,h,segments),material);
- m.position.set(x,y,z);m.castShadow=true;m.receiveShadow=true;parent.add(m);return m;
-}
-cylinder(cake,0.75,0.75,0.3,mat('#f2a0c2'),0,0.12,0);
-cylinder(cake,0.7,0.7,0.32,mat('#ffe0e9'),0,0.42,0);
-cylinder(cake,0.73,0.73,0.12,pink,0,0.63,0);
-cylinder(cake,0.76,0.76,0.1,cream,0,0.73,0);
+cylinder(cake,.75,.75,.3,material('#e99ab9'),0,.12,0);
+cylinder(cake,.7,.7,.32,material('#ffe0e9'),0,.42,0);
+cylinder(cake,.73,.73,.12,material('#ed6b9b'),0,.63,0);
+cylinder(cake,.76,.76,.1,material('#fff0d4'),0,.73,0);
 
-// Colourful candy decorations around the icing
-const sprinkleColors=['#ffcc52','#ff6092','#76e5d0','#b7a0ff','#ffffff'];
-for(let i=0;i<34;i++){
+const colours=['#ffcc52','#ff6092','#76e5d0','#b7a0ff','#ffffff'];
+for(let i=0;i<28;i++){
  const a=i*2.399;
- const r=0.48+(i%4)*0.065;
- const sprinkle=cube(cake,0.12,0.035,0.035,mat(sprinkleColors[i%sprinkleColors.length]),Math.cos(a)*r,0.81,Math.sin(a)*r);
+ const r=.48+(i%4)*.065;
+ const sprinkle=cube(cake,.12,.035,.035,material(colours[i%colours.length]),Math.cos(a)*r,.81,Math.sin(a)*r);
  sprinkle.rotation.y=a;
 }
 for(let i=0;i<3;i++){
- cylinder(cake,0.035,0.035,0.35,mat(['#ff7ba8','#ffe17a','#8fe1d2'][i]),-0.3+i*0.3,1.0,0,12);
- cylinder(cake,0.04,0.04,0.1,gold,-0.3+i*0.3,1.22,0,12);
+ cylinder(cake,.035,.035,.35,material(['#ff7ba8','#ffe17a','#8fe1d2'][i]),-.3+i*.3,1,0,12);
+ cylinder(cake,.04,.04,.1,gold,-.3+i*.3,1.22,0,12);
 }
 
 // Floating golden particles
-const particleGroup=new THREE.Group();
-scene.add(particleGroup);
-for(let i=0;i<65;i++){
- const s=0.018+Math.random()*0.035;
+const particles=new THREE.Group();
+scene.add(particles);
+for(let i=0;i<45;i++){
+ const s=.018+Math.random()*.025;
  const p=new THREE.Mesh(new THREE.SphereGeometry(s,8,8),gold);
- p.position.set((Math.random()-0.5)*6,Math.random()*4-0.1,(Math.random()-0.5)*2);
- p.userData.speed=0.15+Math.random()*0.4;
- particleGroup.add(p);
+ p.position.set((Math.random()-.5)*6,Math.random()*4,(Math.random()-.5)*2);
+ p.userData.speed=.15+Math.random()*.4;
+ particles.add(p);
 }
 
 let opened=false;
 let targetRotation=0;
 let dragging=false;
 let previousX=0;
-let pointerStartX=0,pointerStartY=0;
-let moved=false;
+let startX=0,startY=0,moved=false;
 
-document.querySelector('#openBtn').addEventListener('click',()=>{
+function toggleGift(){
  opened=!opened;
- document.querySelector('#openBtn').textContent=opened?'CLOSE YOUR GIFT ✨':'OPEN YOUR GIFT ✨';
-});
-
+}
 canvas.addEventListener('pointerdown',e=>{
- dragging=true;moved=false;previousX=e.clientX;
- pointerStartX=e.clientX;pointerStartY=e.clientY;
+ dragging=true;
+ moved=false;
+ previousX=e.clientX;
+ startX=e.clientX;
+ startY=e.clientY;
  canvas.setPointerCapture(e.pointerId);
 });
 canvas.addEventListener('pointermove',e=>{
  if(!dragging)return;
  const dx=e.clientX-previousX;
- if(Math.abs(e.clientX-pointerStartX)+Math.abs(e.clientY-pointerStartY)>5)moved=true;
- targetRotation+=dx*0.012;
+ if(Math.abs(e.clientX-startX)+Math.abs(e.clientY-startY)>6)moved=true;
+ targetRotation+=dx*.012;
  previousX=e.clientX;
 });
 canvas.addEventListener('pointerup',()=>{
- if(dragging&&!moved){
-   // Tap the 3D scene to open or close the gift
-   opened=!opened;
-   document.querySelector('#openBtn').textContent=opened?'CLOSE YOUR GIFT ✨':'OPEN YOUR GIFT ✨';
- }
+ if(dragging&&!moved)toggleGift();
  dragging=false;
 });
 canvas.addEventListener('pointercancel',()=>dragging=false);
@@ -219,31 +397,37 @@ function resize(){
  const w=canvas.clientWidth,h=canvas.clientHeight;
  if(!w||!h)return;
  renderer.setSize(w,h,false);
- camera.aspect=w/h;camera.updateProjectionMatrix();
+ camera.aspect=w/h;
+ camera.updateProjectionMatrix();
 }
-new ResizeObserver(resize).observe(canvas);
+if('ResizeObserver' in window){
+ new ResizeObserver(resize).observe(canvas);
+}else{
+ window.addEventListener('resize',resize);
+}
 resize();
 
 const clock=new THREE.Clock();
 function animate(){
  requestAnimationFrame(animate);
  const t=clock.getElapsedTime();
- box.rotation.y+=(targetRotation-box.rotation.y)*0.08;
- if(!dragging)targetRotation+=0.0015;
 
- // Swing lid open on its hinge
- const target=opened?-1.65:0;
- hinge.rotation.x+=(target-hinge.rotation.x)*0.055;
+ box.rotation.y+=(targetRotation-box.rotation.y)*.08;
+ if(!dragging)targetRotation+=.0012;
 
- // Cake rises into view when the gift opens
- const desired=opened?1:0.001;
- cake.scale.lerp(new THREE.Vector3(desired,desired,desired),0.07);
- cake.position.y=1.45+(opened?0.25*Math.min(1,cake.scale.x):0);
- cake.rotation.y=Math.sin(t*0.7)*0.08;
+ hinge.rotation.x+=(opened?-1.65:0-hinge.rotation.x)*.055;
+ // Correctly interpolate the hinge angle
+ const targetHinge=opened?-1.65:0;
+ hinge.rotation.x+=(targetHinge-hinge.rotation.x)*.055;
 
- particleGroup.children.forEach(p=>{
-  p.position.y+=p.userData.speed*0.003;
-  if(p.position.y>4)p.position.y=-0.1;
+ const targetScale=opened?1:.001;
+ cake.scale.lerp(new THREE.Vector3(targetScale,targetScale,targetScale),.07);
+ cake.position.y=1.45+(opened?.25*Math.min(1,cake.scale.x):0);
+ cake.rotation.y=Math.sin(t*.7)*.08;
+
+ particles.children.forEach(p=>{
+  p.position.y+=p.userData.speed*.003;
+  if(p.position.y>4)p.position.y=-.1;
  });
  renderer.render(scene,camera);
 }
